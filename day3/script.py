@@ -18,3 +18,18 @@ with open('input.txt') as f:
                     totalSum += thisDict[char]
                 break
     print(totalSum)
+with open('input.txt') as f:
+    result = 0
+    for index, line in enumerate(f):
+            line1 = line
+            line2 = next(f)
+            line3 = next(f)
+            for char in line1:
+                if char in line2:
+                    if char in line3:
+                        if char != char.lower():
+                            result += thisDict[char.lower()] + 26
+                        else:
+                            result += thisDict[char]
+                        break
+    print(result)
